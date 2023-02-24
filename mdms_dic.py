@@ -1,5 +1,4 @@
 import json
-import getpass
 
 # initialize empty dictionary for storing movie data
 movie_database = {}
@@ -89,54 +88,41 @@ def save_data():
 
 # Function to load movie data from a file
 def load_data():
-filename = input("Enter the filename to load from: ")
-with open(filename, "r") as file:
-data = json.load(file)
-global movie_database
-movie_database = data
-print("Data loaded successfully.")
-
-# Function to authenticate user
-def authenticate():
-username = input("Enter your username: ")
-password = getpass.getpass("Enter your password: ")
-if username == "admin" and password == "password":
-print("Authentication successful.")
-else:
-print("Authentication failed.")
-exit()
-
-# Authenticate user before proceeding
-authenticate()
+    filename = input("Enter the filename to load from: ")
+    with open(filename, "r") as file:
+        data = json.load(file)
+    global movie_database
+    movie_database = data
+    print("Data loaded successfully.")
 
 # Main program loop
 while True:
-print("\n==== Movie Database Management System ====\n")
-print("1. Add a new movie")
-print("2. Edit an existing movie")
-print("3. Delete a movie")
-print("4. View all movies")
-print("5. Search movies")
-print("6. Save data to file")
-print("7. Load data from file")
-print("8. Exit\n")
-choice = input("Enter your choice: ")
+    print("\n==== Movie Database Management System ====\n")
+    print("1. Add a new movie")
+    print("2. Edit an existing movie")
+    print("3. Delete a movie")
+    print("4. View all movies")
+    print("5. Search movies")
+    print("6. Save data to file")
+    print("7. Load data from file")
+    print("8. Exit\n")
+    choice = input("Enter your choice: ")
 
-if choice == "1":
-    add_movie()
-elif choice == "2":
-    edit_movie()
-elif choice == "3":
-    delete_movie()
-elif choice == "4":
-    view_all_movies()
-elif choice == "5":
-    search_movies()
-elif choice == "6":
-    save_data()
-elif choice == "7":
-    load_data()
-elif choice == "8":
-    exit()
-else:
-    print("Invalid choice. Please try again.") 
+    if choice == "1":
+        add_movie()
+    elif choice == "2":
+        edit_movie()
+    elif choice == "3":
+        delete_movie()
+    elif choice == "4":
+        view_all_movies()
+    elif choice == "5":
+        search_movies()
+    elif choice == "6":
+        save_data()
+    elif choice == "7":
+        load_data()
+    elif choice == "8":
+        exit()
+    else:
+        print("Invalid choice. Please try again.")
