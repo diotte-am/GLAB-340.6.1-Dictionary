@@ -12,7 +12,8 @@ In this lab, we'll demonstrate how to use different dictionary method. After imp
 
 ### Movie Database Management System
 
-sample code
+*sample code*
+
 ```
 # Define dictionary of movies and their information
 movies = {
