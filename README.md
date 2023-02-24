@@ -74,6 +74,5 @@ We'll ask input from user to create this list as well. So, below is the complete
 - [ ] User interface: The program should have an easy-to-use graphical user interface that enables users to perform all the required actions with ease.
 - [ ] Error handling: The program should handle any input errors gracefully, displaying appropriate messages to the user if any invalid input is entered.
 - [ ] Data validation: The program should validate all input data to ensure that it is in the correct format and that no incorrect data is stored in the database.
-- [ ] User authentication: The program should require user authentication to ensure that only authorized users can access the movie database management system.
 
 ***Please find attached mdms_dic.py for the sample game code.***
