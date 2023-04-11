@@ -1,6 +1,6 @@
 [![Per Scholas](per_scholas_logo.png)](https://www.perscholas.org) 
 
-# GLAB-340.5.1-Dictionary
+# GLAB-340.6.1-Dictionary
 
 ## Introduction
 The project is a Python program for a movie database management system. The program allows users to add, edit, and view movie information such as title, genre, director, release date, and actors. It also includes a search functionality that enables users to search for a specific movie based on its title or any other criteria.
