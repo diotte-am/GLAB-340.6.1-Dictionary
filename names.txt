@@ -1,0 +1,11 @@
+{
+    "Batman": {
+        "genre": "Thriller",
+        "director": "Guy",
+        "release_date": "1980",
+        "actors": [
+            "Other guy",
+            "that guy"
+        ]
+    }
+}
