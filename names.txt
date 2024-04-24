@@ -7,5 +7,24 @@
             "Other guy",
             "that guy"
         ]
+    },
+    "Batman Returns": {
+        "genre": "Thriller",
+        "director": "Guy",
+        "release_date": "1987",
+        "actors": [
+            "Other guy",
+            "that guy"
+        ]
+    },
+    "Batman and Robin": {
+        "genre": "Thriller",
+        "director": "Guy",
+        "release_date": "1995",
+        "actors": [
+            "Other guy",
+            "that guy"
+        ]
     }
+
 }

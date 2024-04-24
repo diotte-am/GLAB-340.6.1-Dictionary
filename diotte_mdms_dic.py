@@ -26,7 +26,7 @@ def add_movie(movie_db: dict[str, list[str]]) -> None:
     }
     print(title, "has been added to the database.")
 
-# this function takes no parameters and returns nothing; it updates an existing entry in DB
+# this function takes existing db as parameter and returns nothing; it updates an existing entry in DB
 def edit_movie(movie_db: dict[str]) -> None:
     title: str = input("Enter the title of the movie you'd like to edit: ")
     if title in movie_db:
@@ -52,7 +52,7 @@ def edit_movie(movie_db: dict[str]) -> None:
     else:
         print(title, "is not in the database")
 
-
+# this function takes the existing db as a parameter and a deletes an entry based on user input
 def delete_movie(movie_db: dict[str, list[str]]) -> None:
     title = input("Enter the title of the movie you would like to delete: ")
     if title in movie_db:
@@ -61,6 +61,9 @@ def delete_movie(movie_db: dict[str, list[str]]) -> None:
     else:
         print("Sorry,", title, "is not in the database.")
 
+
+# this function takes the db as parameter, takes user input for search term and 
+# prints list of matching entries to terminal
 def search_movies(movie_db: dict[str, list[str]]) -> None:
     search_param = input("Enter your search criteria: ")
     print("Searching database...")
@@ -80,25 +83,29 @@ def search_movies(movie_db: dict[str, list[str]]) -> None:
         else:
             print("no matches found")
 
-def load_data() -> dict[str, list[str]]:
+# takes existing database as a parameter and updates/adds entries from the file given in user input
+def load_data(movie_db: dict[str, list[str]]) -> dict[str, list[str]]:
     filename = input("Enter the filename to load from: ")
     with open(filename, "r") as file:
         data = json.load(file)
-    movie_db = data
+    movie_db.update(data)
     print("Data loaded")
     return movie_db
 
+# saves existing database to a file, user specifies the file name via input
 def save_data(movie_db: dict[str, list[str]]) -> None:
     filename: str = input("Enter filename to save to: ")
     with open(filename, "w") as file:
         json.dump(movie_db, file, indent = 4)
     print("Data saved!")
 
+# displays all movies in the current database on terminal in JSON format
 def view_all_movies(movie_db: dict[str, list[str]]) -> None:
     print("All movies in database: ")
     for movie, info in movie_db.items():
         print(f"{movie}: {json.dumps(info, indent=4)}")
 
+# gets user input from terminal and returns the integer indicating their choice
 def get_action() -> int:
     print("=====*** Welcome to the Movie Database ***=====")
     print(" 1. Add movie\n", "2. Edit movie\n", "3. Delete movie\n",
@@ -107,6 +114,7 @@ def get_action() -> int:
     choice: int = int(input("Please enter a number: "))
     return choice
 
+# main loop of the games, this continues until the use presses 8 to exit
 def main_loop():
     movie_db: dict[str, list[str]] = {}
     game_running: bool = True
@@ -125,7 +133,7 @@ def main_loop():
             case 5:
                 view_all_movies(movie_db)
             case 6:
-                movie_db = load_data()
+                movie_db = load_data(movie_db)
             case 7:
                 save_data(movie_db)
             case 8:
@@ -134,7 +142,5 @@ def main_loop():
                 print("Please enter a number ")
 
     print("Goodbye!")
-
-
 
 main_loop()
